@@ -1,7 +1,7 @@
 function environment() {
     lab.background = null
-    pin.aqua = mod['aqua-buf']
-    pin.backdrop = mod['backdrop-buf']
+    pin.aqua = mod['aqua']
+    pin.backdrop = mod['backdrop']
 
     // copy debug and trace properties
     for (const prop in env.config) {

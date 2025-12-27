@@ -1,4 +1,4 @@
-const Fish = require('/mod/aqua-buf/dna/Fish')
+const Fish = require('/mod/aqua/dna/Fish')
 
 class Anglerfish extends Fish {
 
