@@ -1,27 +1,25 @@
 const Fish = require('/mod/aqua/dna/Fish')
 
+let id = 0
 class Anglerfish extends Fish {
 
     constructor(st) {
         super( augment({
-            name: 'anglerfish',
-            r:     100,
+            name: 'anglerfish' + (++id),
             w:     525,
             h:     422,
+
+            shakeShiftFactor: .006,
+            shakeTimeFactor:  1.3,
         }, st) )
     }
 
     draw() {
-        const { x, y, w, h, r } = this
-
-        const aspect = 2*r / w,
-              sh = ry(.003) / aspect,
-              dx = sh * cos($.env.time),
-              dy = 1.5 * sh * cos(1.3 * $.env.time)
+        const { x, y, w, h, r, dx, dy, dir, scale: s } = this
 
         save()
         translate(x + dx, y + dy)
-        scale(aspect, aspect)
+        scale(s)
 
         super.draw()
 
